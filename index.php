@@ -102,9 +102,12 @@
 	
 	if($path == "" || $path== "/" || $path == null)
 		$path="index";
-	
+		
 	if(substr($path, 0, 1) == "/")
 		$path=substr($path, 1, strlen($path)-1);
+
+	if(substr($path, strlen($path)-1, 1) == "/")
+		$path=substr($path, 0, strlen($path)-1);
 	
 	$template_file = "templates/".$path.".php";
 	
